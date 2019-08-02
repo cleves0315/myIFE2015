@@ -1,0 +1,64 @@
+问题汇总：
+// 7/18
+1：学习使用移动端Touch事件
+
+2：在Touchstart使用setTimeout()，和TouchEnd使用clearTimeout()。实现长按效果
+
+3：解决移动端Touchstart 300ms延迟。
+    a、首先300ms存在的原因：  双击缩放(double tap to zoom)，即用手指在屏幕上快速点击两次，
+       iOS 自带的 Safari 浏览器会将网页缩放至原始比例。
+    b、禁用浏览器缩放：  使用meta标签 content="user-scalable=no"
+    c、更改默认视口宽度： content="width=device-width"
+    (设置了上述meta标签，那浏览器就可以认为该网站已经对移动端做过了适配和优化，就无需双击缩放操作了。)
+    (这个好处在于，它没有完全禁用缩放，而只是禁用了浏览器默认的双击缩放行为，但用户仍然可以通过双指缩放操作来缩放页面。)
+    d、TouchStart与click不同， 事件执行顺序： TouchStart -> TouchEnd -> click
+    于是有了事件穿透： 假设当前有2个元素A B, B元素在A元素上面。
+                      给B元素设置TouchStart回调函数，另B元素隐藏
+                      随后会促发A元素click事件。
+
+4：实现长按弹出删除按钮(新问题：点击删除按钮有大概1ms延迟出现confirm提示框)
+    a、因为大家都说尽量减少对dom的操作，所以采用innerHTML添加删除按钮div
+    b、再给task界面绑定Touchstart，点击任意地方 直接清除删除按钮div
+
+// 7/19
+5: 实验发现：在touchstart或touchend调用alert、confirm这种系统弹窗会有1s左右延迟(iphone 6s)
+            调用preventDefault()会把click事件禁用。
+            在dom操作innerHTML之后，使用parentNode会无法查找到父元素。包括(removeChild)
+
+6: 回到原点：(长按弹出删除按钮后，preventDefault失效了)
+   [猜想：可能一切的原因都在闭包上]； 
+
+// 7/20
+7: 昨日的猜想成功！ 在闭包使用innerHTML创建元素，会使preventDefault失效(iphone 6s测试)。
+   优化了清除删除按钮的回调函数(改放到TouchEnd)
+
+8：重构首页界面(type页)让界面更加美观，修复了刷新页面href没有锚点
+
+10：完成type、task页面样式及大部分点击功能。
+{主要更了解了Touch系列事件和click事件执行顺序的重要性，加深了理解Touch事件穿透(毕竟花了不少时间才搞明白)
+主要在页面样式重构上花了一些时间，以及写了一部分js逻辑部分代码(在之前task0003写过类似代码，所以会顺利许多)}
+(明天预先完成删除操作和添加操作逻辑，task状态栏分别显示逻辑。其后剩下sidebar页面)
+
+先出去一会，等会实现页面跳转showGTD() --->  task页面  
+（点击的childcate parent值已经获取到，根据parent值进行页面展示）
+[如果parent值发生改变，就以新值进行页面重塑， 如果值不存在？ 在进行后退按钮，删除了那个值。]  该怎么处理
+
+sidebar页面------>  点击task其中任务项实现
+
+7/21
+回来已经11点半了，洗完澡想再撸代码，结果卡在了task页面内容展示上。(日期重复时不重复创建，重复的日期只创建一次)
+task数据列表可能乱序，得把[待生成日期标签的数据]与[已经生成DOM标签的日期]挨个判断是否重复。
+
+7/22
+最后一个页面(sidebar)样式基本完成，现在写到几个按钮的事件监听回调函数。(回来后补上)
+(完后中间漏了task页面的状态栏分别显示功能，估计要更改html标签布局)
+
+今晚弄的太晚了，还差一点：task页面点击状态栏事件显示对应state数据。
+
+今日成就：完成sidebar页面及对应按钮事件监听回调函数。修复了一些代码漏洞，优化部分代码。------7/23 2:20
+
+7/23 
+完成task0004移动端界面设计任务。
+
+如果把添加事件监听函数写在window.onload，当页面dom节点发生改变（本代码中更改DOM innerHTML属性）
+会使事件监听失效。得重新添加事件监听。（本代码采用封装在一个函数里，方便调用添加监听事件）

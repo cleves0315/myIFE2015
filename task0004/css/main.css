@@ -1,0 +1,353 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 清除移动端默认点击高亮效果 */
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    color: #222;
+    background-color: #f2f2f2;
+    font-family: 'Microsoft YaHei', sans-serif;
+}
+
+a {
+    color: #222;
+    text-decoration: none;
+    /* 禁用长按出现系统菜单 */
+    -webkit-touch-callout: none;
+}
+
+#strA {
+    /* a标签Touch样式 */
+    background-color: #5da3e9;
+}
+
+#strSpan {
+    background-color: rgb(0, 0, 0, 0.9);
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    /* border: none; */
+    outline: none;
+}
+
+.show {
+    display: block !important;
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: ",";
+    display: table;
+}
+
+.clearfix::before {
+    clear: both;
+}
+
+/* header */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 8rem;
+    line-height: 8rem;
+    margin-bottom: 0.5rem;
+    background-color: #5da3e9;
+    border-radius: 0.2rem;
+    z-index: 1;
+    box-shadow: 0 0.1rem 3px #bdbcbc;
+}
+
+header .logo {
+    color: #fff;
+    font-size: 2.9rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+
+/* type */
+.type {
+    position: relative;
+    display: none;
+    height: 85%;
+    margin: 8rem auto;
+}
+
+.type .header {
+    font-size: 1.3rem;
+    height: 3rem;
+    /* border-bottom: #f00 solid 0.1rem; */
+}
+
+.type .header .title {
+    line-height: 3rem;
+    margin-left: 1rem;
+}
+
+.type .add {
+    float: right;
+    padding: 0.5rem 0.6rem;
+    font-size: 1.5rem;
+    margin-top: 0.2rem;
+    margin-right: 0.5rem;
+    border-radius: 2px;
+    background-color: #fff;
+    border: 0.1rem solid #d3d3d3;
+}
+
+.type .content {
+    position: absolute;
+    width: 100%;
+    top: 3.5rem;
+    bottom: 0;
+    overflow: scroll;
+}
+
+.type .content .line {
+    width: 95%;
+    margin: 0.5rem auto 0;
+    padding-top: 0.2rem;
+    padding-bottom: 0.5rem;
+    border-radius: 2px;
+}
+
+.type .content .line .title {
+    font-size: 2rem;
+    text-align: center;
+    height: 4rem;
+    line-height: 4rem;
+    border-radius: 3px;
+    margin-bottom: 0.8rem;
+    background-color: #5da3e9;
+    /* border: 0.1rem solid #222; */
+}
+
+.type .content .line .title .icon-shanchu {
+    float: right;
+    color: #cf0c0c;
+}
+
+.type .content .line .item {
+    position: relative;
+}
+
+.type .content .line .item a {
+    display: block;
+    font-size: 1.7rem;
+    width: 90%;
+    height: 3.8rem;
+    line-height: 3.8rem;
+    margin: 0.8rem auto 0;
+    text-align: center;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+/* task */
+.task {
+    display: none;
+    margin-top: 8rem;
+}
+
+.task .back {
+    display: inline-block;
+    padding: 0.5rem 0.6rem;
+    font-size: 1.5rem;
+    margin-top: 0.2rem;
+    margin-left: 1rem;
+    border-radius: 2px;
+    background-color: #fff;
+    border: 0.1rem solid #d3d3d3;
+}
+
+.task .add {
+    float: right;
+    padding: 0.5rem 0.6rem;
+    font-size: 1.5rem;
+    margin-top: 0.2rem;
+    margin-right: 0.5rem;
+    border-radius: 2px;
+    background-color: #fff;
+    border: 0.1rem solid #d3d3d3;
+}
+
+.task .title {
+    margin-top: 1rem;
+}
+
+.task .title_nav {
+    text-align: center;
+    font-size: 0;
+    line-height: 3.1rem;
+    height: 3.1rem;
+}
+
+.task .title_nav li {
+    display: inline-block;
+    height: 3.8rem;
+    line-height: 3.8rem;
+    border-radius: 3px;
+    width: 20%;
+    margin-left: 2rem;
+    font-size: 1.8rem;
+    background-color: #fff;
+    border: 0.1rem solid #d3d3d3;
+}
+
+.task .title_nav #hide {
+    color: #fff;
+    background-color: #5da3e9;
+}
+
+.task .content {
+    position: absolute;
+    overflow: auto;
+    width: 100%;
+    top: 16.5rem;
+    bottom: 0;
+}
+
+.task .content .list li {
+    position: relative;
+}
+
+.task .content .date,
+.task .content .list a {
+    text-align: center;
+    font-size: 1.9rem;
+    height: 4rem;
+    line-height: 4rem;
+    margin-top: 0.8rem;
+}
+
+.task .content .list a {
+    display: block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    background-color: #fff;
+    border-bottom: #000;
+}
+
+.task .content .list .icon-check {
+    position: absolute;
+    color: #fff;
+    top: 1rem;
+    right: 2rem;
+}
+
+.task .content .list .finish {
+    color: #fff;
+    background-color: #5da3e9;
+}
+
+.type .content .list .dele,
+.task .content .list .dele {
+    position: absolute;
+    top: -2.7rem;
+    left: 50%;
+    width: 5.6rem;
+    height: 3.5rem;
+    border-radius: 5px;
+    margin-left: -2.8rem;
+    font-size: 1.6rem;
+    text-align: center;
+    line-height: 3.5rem;
+    color: #fff;
+    background-color: #222;
+}
+
+/* sidebar */
+.sidebar {
+    display: none;
+    margin-top: 8rem;
+}
+
+.sidebar .header {
+    overflow: auto;
+}
+
+.sidebar .header .header-right {
+    float: right;
+}
+
+.sidebar .back {
+    display: inline-block;
+    padding: 0.5rem 0.6rem;
+    font-size: 1.5rem;
+    margin-top: 0.2rem;
+    margin-left: 1rem;
+    border-radius: 2px;
+    background-color: #fff;
+    border: 0.1rem solid #d3d3d3;
+}
+
+.sidebar .header .iconfont {
+    float: right;
+    margin-right: 0.5rem;
+    font-size: 3.5rem;
+}
+
+.sidebar .header .icon-wancheng {
+    margin-right: 1.5rem;
+}
+
+.sidebar .content .date {
+    color: #d4d4d4;
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.sidebar .content .edit-date {
+    display: block;
+    width: 95%;
+    height: 3rem;
+    margin: 1rem auto 0;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.sidebar .content .text {
+    width: 100%;
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    padding: 0 0.5rem;
+}
+
+.sidebar .edit-finish {
+    float: right;
+    padding: 0.5rem 0.6rem;
+    font-size: 1.5rem;
+    margin-top: 0.2rem;
+    margin-right: 0.5rem;
+    border-radius: 2px;
+    background-color: #fff;
+    border: 0.1rem solid #d3d3d3;
+}
+
+.sidebar .content .edit-text {
+    display: block;
+    width: 95%;
+    height: 50%;
+    font-size: 1.8rem;
+    margin: 3rem auto;
+    padding: 0.5rem;
+}
+
+.sidebar .header #scale {
+    font-size: 3rem;
+    color: #cf0c0c;
+}

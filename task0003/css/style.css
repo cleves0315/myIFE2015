@@ -1,0 +1,524 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* header */
+.header {
+    min-width: 800px;
+    height: 80px;
+    line-height: 80px;
+    color: #fff;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    cursor: default;
+    background-color: #5da3e9;
+}
+
+.header h1 {
+    padding-left: 20px;
+    font-weight: 400;
+}
+
+
+/* main */
+.main {
+    position: absolute;
+    width: 100%;
+    min-width: 800px;
+    min-height: 300px;
+    top: 80px;
+    bottom: 0px;
+    
+}
+
+.type,
+.task {
+    position: absolute;
+    top: 1px;
+    bottom: 2px;
+    width: 250px;
+    box-sizing: border-box;
+    border-right: 1px solid #d3d3d3;
+}
+
+.type *,
+.task * {
+    font-weight: 400;
+}
+
+.type:hover,
+.task:hover {
+    cursor: default;
+}
+
+.type .iconfont,
+.task .iconfont {
+    margin-right: 10px;
+}
+
+.type-footer,
+.task-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 40px;
+    font-size: 15px;
+    padding-left: 20px;
+    line-height: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid #d3d3d3;
+}
+
+.type-footer .iconfont,
+.task-footer .iconfont {
+    transform: scale(2, 2);
+}
+
+.type-footer .iconfont:hover,
+.task-footer .iconfont:hover {
+    cursor: pointer;
+    /* font-size: 17px; */
+    transform: scale(1.2, 1.2);
+    /* opacity: 0.7; */
+}
+
+/* type */
+.type {
+    left: 0;
+    background-color: #f2f2f2;
+}
+
+.type-wrap {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 40px;
+    overflow: scroll;
+}
+
+.type-list li {
+    margin-top: 5px;
+}
+
+.type-wrap h3 {
+    font-size: 16px;
+    margin: 10px 10px;
+}
+
+.type-list-tt {
+    font-size: 16px;
+    padding-left: 20px;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.type-list-tt:hover {
+    box-shadow: 0 0 5px #bebdbd;
+}
+
+.type-list-tt-focus {
+    background-color: #ffff00;
+    box-shadow: 0 0 5px #bebdbd;
+}
+
+.type-list-item {
+    height: 28px;
+    line-height: 28px;
+    font-size: 15px;
+    margin-top: 5px;
+    padding-left: 40px;
+}
+
+.type-list-item:hover {
+    background-color: #64f570;
+}
+
+.type-list-tt:hover .icon-shanchu,
+.type-list-item:hover .icon-shanchu {
+    display: inline;
+}
+
+.icon-shanchu {
+    display: none;
+    float: right;
+    cursor: pointer;
+}
+
+.type-delete-wrap {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: #000; */
+    background-color: rgb(0, 0, 0, 0.1);
+}
+
+.type-delete-box {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -100px;
+    width: 200px;
+    height: 100px;
+    font-size: 18px;
+    background-color: #ffff00;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px #bebdbd;
+}
+
+.type-delete-sure,
+.type-delete-cancel {
+    position: absolute;
+    bottom: 10px;
+    width: 70px;
+    height: 30px;
+    font-size: 15px;
+    line-height: 30px;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.type-delete-sure {
+    left: 20px;
+    background-color: #f82d2d;
+}
+
+.type-delete-cancel {
+    right: 20px;
+}
+
+.type-delete-sure:hover {
+    background-color: rgb(248, 45, 45, 0.8);
+}
+
+/* task */
+.task {
+    left: 250px;
+}
+
+.task-header {
+    height: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #d3d3d3;
+    background-color: #f2f2f2;
+}
+
+.task-header li {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    font-size: 16px;
+    margin-left: 5px;
+    border: 1px solid #f2f2f2;
+    box-sizing: border-box;
+}
+
+.task-header .task-state-focus,
+.task-header li:hover {
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+}
+
+.task-content {
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    bottom: 40px;
+    overflow: scroll;
+}
+
+.task-footer {
+    background-color: #f2f2f2;
+}
+
+.task-list-tt {
+    padding-left: 20px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #f5f3f3;
+    line-height: 30px;
+}
+
+.task-list-tt:hover {
+    box-shadow: 0 0 5px #bebdbd;
+}
+
+.task-list-item-line {
+    font-size: 15px;
+    padding-left: 40px;
+    line-height: 25px;
+    height: 25px;
+    margin: 2px 0;
+}
+
+.task-list-item-line .icon-check {
+    display: none;
+    margin-left: 35px;
+}
+
+.task-list-item-dd {
+    cursor: pointer;
+}
+
+.task .icon-shanchu {
+    display: none;
+}
+
+.task-list-item li:hover .icon-shanchu {
+    display: inline;
+    color: #f00;
+}
+
+#task-list-item-focus {
+    color: #f00;
+}
+
+.task-list-item-finish .icon-check {
+    display: inline;
+}
+
+.task-list-item-finish {
+    color: #7afd87;
+}
+
+/* sidebar */
+.sidebar {
+    position: absolute;
+    top: 1px;
+    left: 500px;
+    right: 0;
+    /* min-width: 500px; */
+    bottom: 2px;
+}
+
+.sidebar-header,
+.sidebar-date {
+    position: relative;
+    height: 60px;
+    line-height: 60px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.sidebar-header {
+    background-color: #f2f2f2;
+}
+
+.sidebar-header-text,
+.sidebar-date-data {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.sidebar-header .iconfont {
+    display: none;
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+#bjIcon {
+    display: inline;
+}
+
+#wcIcon {
+    display: inline;
+}
+
+.sidebar-header .iconfont:hover {
+    -ms-transform: scale(1.3, 1.3);
+    -webkit-transform: scale(1.3, 1.3);
+    -moz-transform: scale(1.3, 1.3);
+    transform: scale(1.3, 1.3);
+    transition: 0.3s;
+}
+
+.sidebar-date {
+    background-color: #ffffae;
+}
+
+.sidebar-content {
+    padding: 20px;
+}
+
+.sidebar-edit {
+    display: none;
+}
+
+.edit-tt,
+.edit-date,
+.edit-content {
+    outline: none;
+    font-size: 15px;
+    cursor: default;
+    border-radius: 3px;
+    border: 1px solid #a0a0a0;
+}
+
+.edit-tt,
+.edit-date {
+    position: absolute;
+    top: 50%;
+    left: 80px;
+    margin-top: -15px;
+    height: 30px;
+    width: 400px;
+    padding-left: 5px;
+}
+
+.edit-tips {
+    display: none;
+    position: absolute;
+    width: 200px;
+    left: 490px;
+    color: #f00;
+}
+
+.edit-tt:hover,
+.edit-date:hover,
+.edit-content:hover {
+    border: 1px solid #807f7f;
+}
+
+.edit-tt:focus,
+.edit-date:focus,
+.edit-content:focus {
+    border: 1px solid #5da3e9;
+}
+
+.edit-content {
+    width: 100%;
+    height: 40%;
+    padding: 5px;
+}
+
+.edit-btn-wrap {
+    margin-top: 5px;
+}
+
+.edit-btn {
+    width: 70px;
+    height: 30px;
+    font-weight: 100;
+    border: 0;
+    border-radius: 3px;
+    margin-right: 10px;
+    color: #fff;
+    outline: none;
+    background-color: #639ef7;
+}
+
+.edit-btn:hover {
+    background-color: #83b2fa;
+}
+
+.edit-btn:active {
+    -ms-transform: scale(0.97, 0.97);
+    -webkit-transform: scale(0.97, 0.97);
+    -moz-transform: scale(0.97, 0.97);
+    transform: scale(0.97, 0.97);
+}
+
+/* add-type-wrap */
+.add-type-wrap {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    background-color: rgb(0, 0, 0, 0.3);
+}
+
+.add-type-box {
+    /* display: none; */
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -200px;
+    padding: 5px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    border: 1px solid #d3d3d3;
+    background-color: #5da3e9;
+}
+
+.add-type-box .icon-shanchushaixuanxiang {
+    position: absolute;
+    left: 397px;
+    top: -4px;
+    font-size: 29px;
+    cursor: pointer;
+}
+
+.add-type-box .icon-shanchushaixuanxiang:hover {
+    transform: scale(1.3, 1.3);
+    transition: 0.1s;
+}
+
+.add-type-box .add-type-content {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.add-type-box .add-type-content input {
+    width: 350px;
+    height: 40px;
+    border-radius: 3px;
+    margin-top: 30px;
+    cursor: default;
+    box-sizing: border-box;
+    padding-left: 5px;
+    font-size: 16px;
+    border: 0;
+}
+
+.add-type-box .add-type-content-tips {
+    display: none;
+    margin-top: 5px;
+    color: #f00;
+}
+
+.add-type-box .add-btn {
+    position: absolute;
+    border: 0;
+    height: 40px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 20px;
+    width: 350px;
+    outline: none;
+    border-radius: 3px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #64f570;
+    box-sizing: border-box;
+}
+
+.add-type-box .add-btn:hover {
+    background-color: #7afd87;
+}

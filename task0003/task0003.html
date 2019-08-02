@@ -1,0 +1,105 @@
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>task0003</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="font/iconfont.css">
+    </head>
+    <body>
+        <header class="header">
+            <h1>GTD Tools</h1>
+        </header>
+        <div class="main">
+            <div class="type">
+                <div class="type-wrap">
+                    <h3 class="type-title1"><span class="iconfont icon-daohang"></span>所有任务</h3>
+                    <h3 class="type-title2"><span class="iconfont icon-daohang"></span>分类列表</h3>
+                    <ul class="type-list"></ul>
+                </div>
+                <div class="type-footer">
+                    <span class="iconfont icon-tianjia type-add-btn" onclick="openAddType()"></span>
+                    新增分类
+                </div>
+            </div>
+            <div class="task">
+                <div class="task-header">
+                    <ul id="task-header-nav" onclick="stateTaskClick(event)">
+                        <li id="task-state-all" class="task-state-focus">所有</li>
+                        <li id="task-state-notfinish">未完成</li>
+                        <li id="task-state-finish">已完成</li>
+                    </ul>
+                </div>
+                <div class="task-content">
+                    <ul id="task-list" onclick="tListItemClick(event)"></ul>
+                </div>
+                <div class="task-footer"><span class="iconfont icon-tianjia" onclick="openTaskEdit()"></span>新增任务</div>
+            </div>
+            <div class="sidebar">
+                <div class="sidebar-show">
+                    <div class="sidebar-header">
+                        <h3 class="sidebar-header-text">任务：<span id="sidebar-header-content"></span></h3>
+                        <span class="iconfont icon-bianji1" onclick="taskEdit()"></span>
+                        <span class="iconfont icon-wancheng" onclick="taskFinish()"></span>
+                    </div>
+                </div>
+                <div class="sidebar-edit">
+                    <div class="sidebar-header">
+                        <h3 class="sidebar-header-text">任务：</h3>
+                        <input class="edit-tt" type="text" onblur="editBlur(event)">
+                        <span class="edit-tips"></span>
+                    </div>
+                </div>
+                <div class="sidebar-show">
+                    <div class="sidebar-date">
+                        <h3 class="sidebar-date-data">日期：<span id="sidebar-date-content"></span></h3>
+                    </div>
+                </div>
+                <div class="sidebar-edit">
+                    <div class="sidebar-date">
+                        <h3 class="sidebar-date-data">日期：</h3>
+                        <input class="edit-date" type="text" onblur="editBlur(event)" placeholder="YYYY-XX-OO">
+                        <span class="edit-tips"></span>
+                    </div>
+                </div>
+                <div class="sidebar-show">
+                    <div class="sidebar-content">
+                        <p id="sidebar-content-text"></p>
+                    </div>
+                </div>
+                <div class="sidebar-edit">
+                    <div class="sidebar-content">
+                        <div class="edit-content-wrap">
+                            <textarea id="edCont" class="edit-content" placeholder="输入任务内容"></textarea>
+                            <div class="edit-btn-wrap">
+                                <button class="edit-btn" type="button" onclick="submitTaskEdit()">提交</button>
+                                <button class="edit-btn" type="button" onclick="cancleTaskEdit()">放弃</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="add-type-wrap" onkeydown="addTpBoxKDown(event)">
+            <div class="add-type-box">
+                <span class="iconfont icon-shanchushaixuanxiang" onclick="closeAddType()"></span>
+                <div class="add-type-content">
+                    <h3 class="add-type-tt">请输入任务类名</h3>
+                    <input class="add-type-ptext" type="text" list="type-add-list" placeholder="请输入/选择父项分类">
+                    <datalist id="type-add-list"></datalist>
+                    <input class="add-type-ctext" type="text" placeholder="请输入子项分类">
+                    <span class="add-type-content-tips"></span>
+                </div>
+                <button class="add-btn" type="button" onclick="createNewType()">确定</button>
+            </div>
+        </div>
+        <div class="type-delete-wrap">
+            <div class="type-delete-box">
+                <h4>删除数据将无法恢复</h4>
+                <span class="type-delete-sure">确定</span>
+                <span class="type-delete-cancel">取消</span>
+            </div>
+        </div>
+        <script src="js/util.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

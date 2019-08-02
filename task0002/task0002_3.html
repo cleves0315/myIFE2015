@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>task0002_3</title>
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="nav-wrap">
+                <h1 class="logo"><a href="task0002_1.html">Phontomn</a></h1>
+                <ul class="column">
+                    <li><a href="task0002_1.html">小练习1</a></li>
+                    <li><a href="task0002_2.html">小练习2</a></li>
+                    <li><a href="task0002_3.html">小练习3</a></li>
+                    <li><a href="task0002_4.html">小练习4</a></li>
+                    <li><a href="task0002_5.html">小练习5</a></li>
+                </ul>
+            </div>
+            <a href="https://github.com/phontomn" target="_blank" class="icon-github"><img src="img/icon-github.png"></a>
+        </header>
+        <div class="main">
+            <div class="main-wrap">
+                <h2 class="main-title">小练习3</h2>
+                <div class="scenery-box">
+                    <div class="scenery-wrap" style="left: -600px;">
+                        <img src="img/scenery-1.jpg" draggable="false" alt="0">
+                        <img src="img/scenery-2.jpg" draggable="false" alt="1">
+                        <img src="img/scenery-3.jpg" draggable="false" alt="2">
+                        <img src="img/scenery-4.jpg" draggable="false" alt="3">
+                        <img src="img/scenery-5.jpg" draggable="false" alt="4">
+                        <img src="img/scenery-6.jpg" draggable="false" alt="5">
+                    </div>
+                    <div class="pot-box">
+                        <ul class="pot-list">
+                            <li index="0" onclick="skipPlay()"></li>
+                            <li id="seles" index="1" onclick="skipPlay()"></li>
+                            <li index="2" onclick="skipPlay()"></li>
+                            <li index="3" onclick="skipPlay()"></li>
+                            <li index="4" onclick="skipPlay()"></li>
+                            <li index="5" onclick="skipPlay()"></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <button type="button" onclick="prevPlay()" class="btn">上翻页</button>
+                <button type="button" onclick="nextPlay()" class="btn">下翻页</button>
+                <button type="button" onclick="orderPlay()" class="btn">正序播放</button>
+                <button type="button" onclick="rorderPlay()" class="btn">逆序播放</button>
+                <button type="button" onclick="stopPlay()" class="btn">停止播放</button>
+            </div>
+        </div>
+        <script src="js/task0002_3.js"></script>
+        <script src="js/util.js"></script>
+    </body>
+</html>
