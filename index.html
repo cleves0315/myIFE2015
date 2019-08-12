@@ -4,26 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>IFE任务作品</title>
     <style>
-        .nav {
-            width: 300px;
-            margin: 0 auto;
+        @media screen and (max-width: 980px) {
+            .github {
+                display: none;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul, ol {
+           list-style: none; 
         }
         a {
+            color: #fff;
+            text-decoration: none;
+        }
+        a:hover {
             color: #222;
         }
-        .item {
+        header {
+            position: relative;
+            min-width: 980px;
+            height: 80px;
+            background-color: #004080;
+        }
+        .center {
+            position: relative;
+            width: 980px;
+            height: 80px;
+            margin: 0 auto;
+        }
+        .logo {
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+            color: #fff;
+        }
+        .github {
+            position: absolute;
+            right: 10px;
+            bottom: 0;
+        }
+        .list {
+            position: absolute;
+            right: 0;
+            bottom: 10px;
+            font-size: 0;
+        }
+        .list li {
+            display: inline-block;
+            padding: 0 15px;
+            font-size: 16px;
+        }
+        .content {
+            width: 980px;
+            margin: 10px auto 0;
+            padding: 0 20px 20px;
+            box-sizing: border-box;
+            border: 1px solid #d1d5da;
+        }
+
+        .part h3:first-child {
             margin-top: 20px;
+        }
+
+        .part h3 {
+            margin-top: 50px;
+            margin-bottom: 20px;
+            height: 35px;
+            border-bottom: 1px solid #d1d5d1;
+        }
+        
+        .part a {
+            color: #222;
+            font-size: 15px;
+            font-weight: 400;
+            background-color: #eee;
+            border-radius: 3px;
+            padding: 2px 8px;
+        }
+        .part p {
+            margin: 10px 0;
         }
     </style>
 </head>
 <body>
-    <ul class="nav">
-        <li class="item"><a href="task0001/index.html">task0001</a></li>
-        <li class="item"><a href="task0002/task0002_1.html">task0002</a></li>
-        <li class="item"><a href="task0003/task0003.html">task0003</a></li>
-        <li class="item"><a href="task0004/index.html">task0004</a></li>
-    </ul>
+    <header>
+        <div class="center">
+            <h1 class="logo">Phontom</h1>
+            <nav class="list">
+                <ul>
+                    <li class="item"><a href="task0001/index.html" target="_blank">task0001</a></li>
+                    <li class="item"><a href="task0002/task0002_1.html" target="_blank">task0002</a></li>
+                    <li class="item"><a href="task0003/task0003.html" target="_blank">task0003</a></li>
+                    <li class="item"><a href="task0004/index.html" target="_blank">task0004</a></li>
+                </ul>
+            </nav>
+        </div>
+        <a href="https://github.com/phontomn"><img class="github" src="task0001/img/icon-github.png" alt="github"></a>
+    </header>
+    <section class="content">
+        <article class="part">
+            <h3>任务编号：<a href="task0001/index.html" target="_blank">TASK 0001</a></h3>
+            <p>掌握HTML、CSS基础知识、能够较为熟练地使用HTML、CSS编写页面</p>
+            <h3>任务编号：<a href="task0002/task0002_1.html" target="_blank">TASK 0002</a></h3>
+            <p>掌握JavaScript基础知识，能够使用JavaScript编写一些复杂度不大的交互功能。</p>
+            <h3>任务编号：<a href="task0003/task0003.html" target="_blank">TASK 0003</a></h3>
+            <p>结合前两个任务所掌握的HTML、CSS、JavaScript知识，实现一个中等复杂度的Web网站</p>
+            <h3>任务编号：<a href="task0004/index.html" target="_blank">TASK 0004</a></h3>
+            <p>移动端适配：整个产品为SPA <a href="task0003/task0003.html" target="_blank">TASK0003</a> 的移动端版本，使用原生js编写没有选择使用框架和第三方手势库</p>
+        </article>
+    </section>
 </body>
 </html>

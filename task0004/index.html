@@ -6,7 +6,23 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/iconfont.css">
         <link rel="shortcut icon" href="css/favicon.ico" type="image/x-icon">
-        <!-- <link rel="stylesheet" href="node_modules/normalize.css/normalize.css"> -->
+        <script type="text/javascript">
+            var system = {};
+            var p = navigator.platform;
+            var u = navigator.userAgent;
+            
+            system.win = p.indexOf("Win") == 0;
+            system.mac = p.indexOf("Mac") == 0;
+            system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+            if (system.win || system.mac || system.xll) {//如果是PC转
+                if (u.indexOf('Windows Phone') > -1) {  //win手机端
+
+                }else {
+                    alert('检测当前您为pc端访问，为了您有更好的体验，自动转跳task0003界面');
+                    window.location.href = "../task0003/task0003.html";
+                }
+            }
+        </script>
     </head>
     <body>
         <header>
